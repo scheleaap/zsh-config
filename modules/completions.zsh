@@ -12,6 +12,7 @@ setopt AUTO_LIST # Automatically list choices on ambiguous completion.
 # setopt MENU_COMPLETE # Do autoselect the first completion entry.
 
 unsetopt CORRECT # disable Spelling corrections
+unsetopt CORRECT_ALL # disable Spelling corrections (for older versions of zsh)
 
 autoload -Uz compinit && compinit
 
