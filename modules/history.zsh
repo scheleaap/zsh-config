@@ -16,8 +16,8 @@ setopt HIST_VERIFY
 #setopt SHARE_HISTORY # share command history between sessions
 setopt NO_HIST_BEEP
 
-# HH configuration
-export HISTFILE=$HISTFILE       # ensure history file visibility
-export HH_CONFIG=hicolor        # get more colors
-
-bindkey -s "^R" "hh\n"            # bind Ctrl + r
+## HH configuration
+#export HISTFILE=$HISTFILE       # ensure history file visibility
+#export HH_CONFIG=hicolor        # get more colors
+#
+#bindkey -s "^R" "hh\n"            # bind Ctrl + r
