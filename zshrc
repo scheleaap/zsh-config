@@ -13,8 +13,8 @@ export ZSH_FILE_DIR="$ZSH_CONFIG_DIR/files"
 export LC_ALL="en_US.UTF-8"
 
 bindkey -e # -e emacs mode -v for vi mode
-
-# aliases
+bindkey ";5C" forward-word
+bindkey ";5D" backward-word
 
 
 # load helper module
