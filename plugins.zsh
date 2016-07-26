@@ -16,21 +16,21 @@ bindkey '^[[B' history-substring-search-down   # bind arrow-down
 # zsh-completions ##############################################"################
 _zshrc_plugin_install 'https://github.com/zsh-users/zsh-completions.git'
 
-# docker completitions
+# docker completions
 if command -v docker >/dev/null && ! $(find "$ZSH_PLUGIN_DIR/zsh-completions/src/_docker" -mmin +$(expr 60 \* 24 \* 7) 2> /dev/null); then
-  echo "update docker completition"
+  echo "update docker completion"
   curl -s -L -o "$ZSH_PLUGIN_DIR/zsh-completions/src/_docker" "https://raw.githubusercontent.com/docker/docker/v$(docker version --format '{{.Client.Version}}')/contrib/completion/zsh/_docker"
 fi
 
-# docker-compose completitions
+# docker-compose completions
 if command -v docker-compose >/dev/null && ! $(find "$ZSH_PLUGIN_DIR/zsh-completions/src/_docker-compose" -mmin +$(expr 60 \* 24 \* 7) 2> /dev/null); then
-  echo "update docker-compose completition"
+  echo "update docker-compose completion"
   curl -s -L -o "$ZSH_PLUGIN_DIR/zsh-completions/src/_docker-compose" "https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/zsh/_docker-compose"
 fi
 
-# docker-compose completitions
+# docker-compose completions
 if command -v docker >/dev/null && ! $(find "$ZSH_PLUGIN_DIR/zsh-completions/src/_brew" -mmin +$(expr 60 \* 24 \* 7) 2> /dev/null); then
-  echo "update brew completition"
+  echo "update brew completion"
   curl -s -L -o "$ZSH_PLUGIN_DIR/zsh-completions/src/_brew" "https://raw.githubusercontent.com/Homebrew/brew/master/share/zsh/site-functions/_brew"
 fi
 
