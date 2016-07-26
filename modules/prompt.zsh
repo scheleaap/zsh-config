@@ -12,6 +12,25 @@ bindkey "^X^E" edit-command-line
 
 autoload -U colors && colors
 
+# configure vcs_info
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' formats "in ${fg[magenta]}%r$reset_color on ${fg[green]}%b$reset_color (%a) %m%u%c"
+zstyle ':vcs_info:git*+set-message:*' hooks git-st
+function +vi-git-st() {
+    local ahead behind
+    local -a gitstatus
+
+    ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
+    (( $ahead )) && gitstatus+=( "↑ ${ahead}" )
+
+    behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
+    (( $behind )) && gitstatus+=( "↓ ${behind}" )
+
+    hook_com[misc]+=${(j:/:)gitstatus}
+}
+
 # count prompt for command
 local CMD_ID=0
 function preexec {
@@ -38,12 +57,13 @@ function precmd {
     echo "${fg_bold[red]}✖ $exit_code$reset_color"
   fi
 
+  vcs_info # load VCS information
+
   current_user=$(whoami)
   current_host=$(hostname -s)
   current_dir=$(pwd | sed -e "s|^$HOME|~|" -e 's-\([^/.]\)[^/]*/-\1/-g')
-  current_branch=$(git branch 2> /dev/null | sed -n '/\* /s///p' | sed 's/^( *//;s/ *)$//;')
-
-
+  #current_git_repo=$([ -d .git ] || basename $(git rev-parse --show-toplevel))
+  #current_git_branch=$(git branch 2> /dev/null | sed -n '/\* /s///p' | sed 's/^( *//;s/ *)$//;')
 
   # precmd start
   precmd="${fg[default]}#$reset_color "
@@ -55,13 +75,19 @@ function precmd {
   # current_dir
   precmd+=" ${fg[default]}in$reset_color ${fg[yellow]}$current_dir$reset_color"
 
-  # current_branch
-  if [ -n "$current_branch" ]; then
-    if [[ "$current_branch" != "detached "* ]]; then
-      precmd+=" ${fg[default]}on$reset_color"
-    fi;
-    precmd+=" ${fg[green]}$current_branch$reset_color"
-  fi
+  ## current_git_repo
+  #if [ -n "$current_git_repo" ]; then
+  #  precmd+=" ${fg[magenta]}$current_git_repo$reset_color"
+  #fi
+
+  ## current_git_branch
+  #if [ -n "$current_git_branch" ]; then
+  #  if [[ "$current_git_branch" != "detached "* ]]; then
+  #    precmd+=" ${fg[default]}on$reset_color"
+  #  fi;
+  #  precmd+=" ${fg[green]}$current_git_branch$reset_color"
+  #fi
+  precmd+=" ${vcs_info_msg_0_}"
 
   echo "$precmd"
 }
@@ -71,4 +97,4 @@ PS1='❯ '
 PS2='▪ '
 
 # right prompt
-# RPROMPT='[%D{%H:%M:%S}]' # date
+RPROMPT='[%D{%H:%M:%S}]' # date
