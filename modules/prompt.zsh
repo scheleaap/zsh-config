@@ -54,7 +54,7 @@ function precmd {
   exit_code=$?
   if [ $exit_code -ne 0 ] && [ $FAILD_CMD_ID -ne $CMD_ID ]; then
     FAILD_CMD_ID=$CMD_ID
-    echo "${fg_bold[red]}✖ $exit_code$reset_color"
+    echo "${fg[red]}✖ $exit_code$reset_color"
   fi
 
   vcs_info # load VCS information
@@ -97,4 +97,4 @@ PS1='❯ '
 PS2='▪ '
 
 # right prompt
-RPROMPT='[%D{%H:%M:%S}]' # date
+#RPROMPT='[%D{%H:%M:%S}]' # date
