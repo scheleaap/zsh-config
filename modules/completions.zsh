@@ -11,8 +11,8 @@ setopt AUTO_LIST # Automatically list choices on ambiguous completion.
 # setopt AUTO_MENU # Show completion menu on a successive tab press.
 # setopt MENU_COMPLETE # Do autoselect the first completion entry.
 
-unsetopt CORRECT # disable Spelling corrections
-unsetopt CORRECT_ALL # disable Spelling corrections (for older versions of zsh)
+unsetopt CORRECT # disable spelling corrections
+unsetopt CORRECT_ALL # disable spelling corrections
 
 autoload -Uz compinit && compinit
 
@@ -22,7 +22,8 @@ export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 
 
 # Fuzzy matching of completions
-zstyle ':completion:*' completer _complete _match _approximate _history
+#zstyle ':completion:*' completer _complete _match _approximate _history
+zstyle ':completion:*' completer _complete _match _history
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)' # the number of allowed errors by _approximate increases with the length of what you have typed so far
