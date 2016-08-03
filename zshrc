@@ -2,8 +2,12 @@
 # chsh -s /bin/zsh
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=/usr/bin/atom
+export EDITOR="$VISUAL"
+PATH=$PATH:~/bin/eclipse
+PATH=$PATH:~/bin/apache-maven-3.3.9/bin
+PATH=$PATH:~/bin/idea/bin
+M2_HOME=~/bin/apache-maven-3.3.9
 
 export ZSH_CONFIG_DIR="$(dirname $0)"
 export ZSH_PLUGIN_DIR="$ZSH_CONFIG_DIR/plugins"
