@@ -13,7 +13,7 @@ alias du='du -kh'
 alias df='df -kTh'
 
 # ls
-alias ls='ls -Gl' # colorize types
+alias ls='ls -h --color=auto'
 alias l='ls -lhv'
 alias ll='ls -lAhv'
 
