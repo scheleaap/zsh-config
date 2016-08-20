@@ -2,7 +2,11 @@
 # chsh -s /bin/zsh
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export VISUAL=/usr/bin/atom
+if [ $(command -v atom >/dev/null 2>&1) ]; then
+  export VISUAL=/usr/bin/atom
+else
+  export VISUAL=/usr/bin/joe
+fi
 export EDITOR="$VISUAL"
 PATH=$PATH:~/bin/eclipse
 PATH=$PATH:~/bin/apache-maven-3.3.9/bin
