@@ -88,3 +88,5 @@ zstyle ':completion:*:killall:*' command 'ps -u $USER -o command'
 
 ###
 #zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+
+ZLE_SPACE_SUFFIX_CHARS=$'&|' # do not remove space after completion for '&' and '|'
