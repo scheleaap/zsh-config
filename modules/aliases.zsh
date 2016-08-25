@@ -38,7 +38,8 @@ alias ll='ls -lAhv'
 # grep
 alias grep='grep --color=auto' # colorize matching parts
 
-# other
+# Maven
+alias mvn="mvn-colorized"
 alias mci='mvn clean install'
 
 # other
