@@ -40,6 +40,9 @@ alias grep='grep --color=auto' # colorize matching parts
 
 # other
 alias mci='mvn clean install'
+
+# other
+alias man='man-colorized'
 alias xopen='xdg-open'
 
 # Deposit Solutions

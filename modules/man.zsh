@@ -1,10 +1,12 @@
-#colorize manpage
-man() {
+autoload -U colors && colors
+
+# colorize manpage
+function man-colorized {
   env \
-    LESS_TERMCAP_md=$(printf '\e[1;32m') \
-    LESS_TERMCAP_us=$(printf '\e[1;36m') \
-    LESS_TERMCAP_ue=$(printf '\e[0m') \
+    LESS_TERMCAP_md=$(printf "${fg_bold[green]}") \
+    LESS_TERMCAP_us=$(printf "${fg_bold[blue]}") \
+    LESS_TERMCAP_ue=$(printf "${fg_bold[default]}") \
     PAGER="${commands[less]:-$PAGER}" \
     _NROFF_U=1 \
-    man $@
+    'man' $@
 }
