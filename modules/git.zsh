@@ -4,20 +4,6 @@ git config --global pull.rebase true
 git config --global push.followTags true
 git config --global tag.sort version:refname
 
-if [ -e '/Applications/Atom.app' ]; then
-  git config --global core.editor "atom --wait"
-fi
-
-if [ -e '/Applications/IntelliJ IDEA.app' ]; then
-  git config --global mergetool.intellij.cmd '/usr/local/bin/idea merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")'
-  git config --global mergetool.intellij.trustExitCode false
-  git config --global merge.tool intellij
-
-  git config --global difftool.intellij.cmd '/usr/local/bin/idea diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")'
-  git config --global difftool.intellij.trustExitCode false
-  git config --global diff.tool intellij
-fi
-
 alias git-log="git log --graph --all --date=format:'%a %Y-%m-%d %H:%M' --pretty=format:' %C(blue bold)%h%C(reset) %C(white bold)%s%C(reset) %C(dim white)%an%C(reset)%n ↪  %C(dim green)%ar%C(reset) %C(dim cyan)%ad%C(reset)%C(auto)%d%C(reset)'"
 alias git-hash='git rev-parse HEAD'
 
