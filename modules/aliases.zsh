@@ -41,6 +41,7 @@ alias grep='grep --color=auto' # colorize matching parts
 # Maven
 alias mvn="mvn-colorized"
 alias mci='mvn clean install'
+alias mcp='mvn clean package'
 
 # other
 alias man='man-colorized'
