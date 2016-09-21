@@ -45,12 +45,3 @@ alias mci='mvn clean install'
 # other
 alias man='man-colorized'
 alias xopen='xdg-open'
-
-# Deposit Solutions
-alias tmp='cd ~/tmp'
-alias work='cd ~/workspace'
-alias pipe='cd ~/workspace/pipeline'
-alias btc='cd ~/workspace/ds-comonea-b2c'
-alias doc='cd ~/workspace/ds-comonea-documentation'
-alias scr='cd ~/workspace/ds-comonea-scripts'
-alias mig='cd ~/workspace/ds-comonea-b2c/cb2c-businesslogic/cb2c-bl-db-migration/src/main/resources/db/migration'
