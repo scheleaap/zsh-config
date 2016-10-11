@@ -11,6 +11,7 @@ export EDITOR="$VISUAL"
 PATH=$PATH:~/bin/eclipse
 PATH=$PATH:~/bin/apache-maven-3.3.9/bin
 PATH=$PATH:~/bin/idea/bin
+PATH=$PATH:~/docker-registry-cli/src
 M2_HOME=~/bin/apache-maven-3.3.9
 
 export ZSH_CONFIG_DIR="$(dirname $0)"
