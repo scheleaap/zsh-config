@@ -25,6 +25,7 @@ bindkey -e # -e emacs mode -v for vi mode
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
+setopt rm_star_silent
 
 # load helper module
 source "$ZSH_CONFIG_DIR/helper.zsh"
