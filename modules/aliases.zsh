@@ -5,6 +5,7 @@ alias rm='\rm -i' # ask before remove file
 alias mkdir='mkdir -p'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # Pretty-print of the PATH variable:
 alias path='echo -e ${PATH//:/\\n}'
@@ -40,8 +41,9 @@ alias grep='grep --color=auto' # colorize matching parts
 
 # Maven
 alias mvn="mvn-colorized"
-alias mci='mvn clean install'
+alias mcc='mvn clean compile'
 alias mcp='mvn clean package'
+alias mci='mvn clean install'
 
 # other
 alias man='man-colorized'
