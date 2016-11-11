@@ -3,11 +3,11 @@ function docker-connect {
 }
 
 function docker-clean-images {
-  docker rmi $(docker images | grep "<none>" | tr -s " " | cut -d " " -f 3)
+  docker rmi -f $(docker images --all --quiet)
 }
 
 function docker-clean-containers {
-  docker rm  $(docker ps --filter "status=exited" --quiet)
+  docker rm $(docker ps --filter "status=exited" --quiet)
 }
 
 function docker-kill-clean {
@@ -23,6 +23,7 @@ function docker-kill-clean {
   fi
   #docker network rm $(docker network ls --filter driver=bridge | grep -v -E -e "(NETWORK ID .*|.*\s+bridge\s+bridge\s+.*)" | sed -r 's/(\w+).*/\1/')
   docker network rm $(docker network ls --filter driver=bridge --quiet)
+  docker volume rm $(docker volume ls -qf dangling=true) 
   echo
 }
 
