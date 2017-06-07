@@ -74,6 +74,12 @@ function git-delete-remote-branch {
   git push origin --delete ${remote_branch}
 }
 
+function git-delete-tag {
+  tag=$1
+  git tag -d $1
+  git push origin :refs/tags/$1
+}
+
 function git-prune-branches-and-tags {
   git fetch --tags --progress origin "+refs/heads/*:refs/remotes/origin/*" --prune
 }
