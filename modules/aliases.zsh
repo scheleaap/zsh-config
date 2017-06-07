@@ -48,3 +48,4 @@ alias mci='mvn clean install'
 # other
 alias man='man-colorized'
 alias xopen='xdg-open'
+alias gitg='nohup gitg > /dev/null 2>&1 &'
