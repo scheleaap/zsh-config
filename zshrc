@@ -2,7 +2,7 @@
 # chsh -s /bin/zsh
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-if [ $(command -v atom >/dev/null 2>&1) ]; then
+if [ $(command -v atom > /dev/null 2>&1) ]; then
   export VISUAL=/usr/bin/atom
 else
   export VISUAL=/usr/bin/joe
