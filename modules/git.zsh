@@ -69,6 +69,10 @@ function git-repository-version-compare {
   fi
 }
 
+function git-delete-local-branches-safely {
+  git br -d $(git br | grep -Ev "(master|develop)")
+}
+
 function git-delete-remote-branch {
   remote_branch=$1
   git push origin --delete ${remote_branch}
