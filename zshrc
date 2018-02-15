@@ -8,11 +8,6 @@ else
   export VISUAL=/usr/bin/joe
 fi
 export EDITOR="$VISUAL"
-PATH=$PATH:~/bin/eclipse
-PATH=$PATH:~/bin/apache-maven-3.5.0/bin
-PATH=$PATH:~/bin/idea/bin
-PATH=$PATH:~/docker-registry-cli/src
-M2_HOME=~/bin/apache-maven-3.5.0
 
 export ZSH_CONFIG_DIR="$(dirname $0)"
 export ZSH_PLUGIN_DIR="$ZSH_CONFIG_DIR/plugins"
@@ -26,6 +21,11 @@ bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
 setopt rm_star_silent
+
+# extend path
+if [ -f "$ZSH_CONFIG_DIR/path_local.zsh" ]; then
+  source "$ZSH_CONFIG_DIR/path_local.zsh"
+fi
 
 # load helper module
 source "$ZSH_CONFIG_DIR/helper.zsh"
