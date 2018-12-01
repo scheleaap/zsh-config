@@ -37,5 +37,3 @@ source "$ZSH_CONFIG_DIR/plugins.zsh"
 for module in $(find "$ZSH_MODULE_DIR" -type f -name '*.zsh'); do
   source $module
 done
-
-mariadb-set-docker
