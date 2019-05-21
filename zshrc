@@ -1,8 +1,11 @@
+#!/usr/bin/zsh
 ## Changing shell for User
 # chsh -s /bin/zsh
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-if [ $(command -v atom > /dev/null 2>&1) ]; then
+if [ -x "$(command -v code)" ]; then
+  export VISUAL=/usr/bin/code
+elif [ -x "$(command -v atom)" ]; then
   export VISUAL=/usr/bin/atom
 else
   export VISUAL=/usr/bin/joe
