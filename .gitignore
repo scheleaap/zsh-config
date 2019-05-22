@@ -1,4 +1,3 @@
 *~
-modules/aliases_local.zsh
+*_local.zsh
 plugins/
-path_local.zsh
