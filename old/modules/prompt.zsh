@@ -94,9 +94,7 @@ function precmd {
 }
 
 # setopt promptsubst # substitude variables within prompt string
-#PS1='❯ '
-PS1='🐵 '
-#PS1='🧀 '
+PS1='❯ '
 PS2='▪ '
 
 # right prompt

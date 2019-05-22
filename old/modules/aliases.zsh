@@ -5,7 +5,6 @@ alias rm='\rm -i' # ask before remove file
 alias mkdir='mkdir -p'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ....='cd ../../..'
 
 # Pretty-print of the PATH variable:
 alias path='echo -e ${PATH//:/\\n}'
@@ -41,12 +40,17 @@ alias grep='grep --color=auto' # colorize matching parts
 
 # Maven
 alias mvn="mvn-colorized"
-alias mcc='mvn clean compile'
-alias mcp='mvn clean package'
 alias mci='mvn clean install'
 
 # other
 alias man='man-colorized'
 alias xopen='xdg-open'
-alias gitg='nohup gitg > /dev/null 2>&1 &'
-alias dc='docker-compose'
+
+# Deposit Solutions
+alias tmp='cd ~/tmp'
+alias work='cd ~/workspace'
+alias pipe='cd ~/workspace/pipeline'
+alias btc='cd ~/workspace/ds-comonea-b2c'
+alias doc='cd ~/workspace/ds-comonea-documentation'
+alias scr='cd ~/workspace/ds-comonea-scripts'
+alias mig='cd ~/workspace/ds-comonea-b2c/cb2c-businesslogic/cb2c-bl-db-migration/src/main/resources/db/migration'

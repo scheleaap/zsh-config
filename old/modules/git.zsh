@@ -1,3 +1,9 @@
+# git global config
+git config --global merge.ff false
+git config --global pull.rebase true
+git config --global push.followTags true
+git config --global tag.sort version:refname
+
 alias git-log="git log --graph --all --date=format:'%a %Y-%m-%d %H:%M' --pretty=format:' %C(blue bold)%h%C(reset) %C(white bold)%s%C(reset) %C(dim white)%an%C(reset)%n ↪  %C(dim green)%ar%C(reset) %C(dim cyan)%ad%C(reset)%C(auto)%d%C(reset)'"
 alias git-hash='git rev-parse HEAD'
 
@@ -67,23 +73,4 @@ function git-repository-version-compare {
     >&2 echo "version needs to be at least $next_version"
     return 1
   fi
-}
-
-function git-delete-local-branches-safely {
-  git br -d $(git br | grep -Ev "(master|develop)")
-}
-
-function git-delete-remote-branch {
-  remote_branch=$1
-  git push origin --delete ${remote_branch}
-}
-
-function git-delete-tag {
-  tag=$1
-  git tag -d $1
-  git push origin :refs/tags/$1
-}
-
-function git-prune-branches-and-tags {
-  git fetch --tags --progress origin "+refs/heads/*:refs/remotes/origin/*" --prune
 }
