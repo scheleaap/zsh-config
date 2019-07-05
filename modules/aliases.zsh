@@ -50,6 +50,7 @@ fi
 # Kubernetes
 if [ -x "$(command -v kubectl)" ]; then alias kc='kubectl'; fi
 if [ -x "$(command -v kubectx)" ]; then alias kx='kubectx'; fi
+if [ -x "$(command -v kubens)" ]; then alias kn='kubens'; fi
 
 # other
 alias man='man-colorized'
