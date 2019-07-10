@@ -14,6 +14,7 @@ export EDITOR="$VISUAL"
 
 export ZSH_CONFIG_DIR="$(dirname $0)"
 export ZSH_PLUGIN_DIR="$ZSH_CONFIG_DIR/plugins"
+export ZSH_PATHS_DIR="$ZSH_CONFIG_DIR/paths"
 export ZSH_MODULE_DIR="$ZSH_CONFIG_DIR/modules"
 export ZSH_FILE_DIR="$ZSH_CONFIG_DIR/files"
 
@@ -26,6 +27,10 @@ bindkey ";5D" backward-word
 setopt rm_star_silent
 
 # extend path
+for module in $(find "$ZSH_PATHS_DIR" -type f -name '*.zsh'); do
+  source $module
+done
+
 if [ -f "$ZSH_CONFIG_DIR/path_local.zsh" ]; then
   source "$ZSH_CONFIG_DIR/path_local.zsh"
 fi
