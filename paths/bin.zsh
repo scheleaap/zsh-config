@@ -1,6 +1,6 @@
 if [ -d ~/bin ]; then
-    PATH=$PATH:~/bin
+    PATH=~/bin:$PATH
 fi
 if [ -d ~/.local/bin ]; then
-    PATH=$PATH:~/.local/bin
+    PATH=~/.local/bin:$PATH
 fi
