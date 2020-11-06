@@ -42,20 +42,18 @@ alias ll='ls -lAhv'
 alias grep='grep --color=auto' # colorize matching parts
 
 # Maven
-if [ -x "$(command -v mvn)" ]; then
-  alias mvn="mvn-colorized"
-  alias mcc='mvn clean compile'
-  alias mcp='mvn clean package'
-  alias mci='mvn clean install'
-fi
+alias mvn="mvn-colorized"
+alias mcc='mvn clean compile'
+alias mcp='mvn clean package'
+alias mci='mvn clean install'
 
 # Kubernetes
-if [ -x "$(command -v kubectl)" ]; then alias kc='kubectl'; fi
-if [ -x "$(command -v kubectx)" ]; then alias kx='kubectx'; fi
-if [ -x "$(command -v kubens)" ]; then alias kn='kubens'; fi
+alias kc='kubectl'
+alias kx='kubectx'
+alias kn='kubens'
 
 # other
 alias man='man-colorized'
 alias xopen='xdg-open'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
-if [ -x "$(command -v docker-compose)" ]; then alias dc='docker-compose'; fi
+alias dc='docker-compose'
