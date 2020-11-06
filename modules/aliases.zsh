@@ -6,6 +6,8 @@ alias mkdir='mkdir -p'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias cat='batcat'
+#alias less='batcat --paging=always'
 
 # Pretty-print of the PATH variable:
 alias path='echo -e ${PATH//:/\\n}'
