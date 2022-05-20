@@ -4,7 +4,7 @@
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 if [ -x "$(command -v code)" ]; then
-  export VISUAL=/usr/bin/code
+  export VISUAL="/usr/bin/code --wait"
 elif [ -x "$(command -v atom)" ]; then
   export VISUAL=/usr/bin/atom
 else
