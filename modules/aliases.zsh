@@ -45,13 +45,25 @@ alias mcc='mvn clean compile'
 alias mcp='mvn clean package'
 alias mci='mvn clean install'
 
+# Git
+alias gap='git add -p'
+alias gsa='git stash apply'
+alias gsd='git stash drop'
+alias gss='git stash save'
+alias gitg='nohup gitg > /dev/null 2>&1 &'
+
 # Kubernetes
 alias kc='kubectl'
 alias kx='kubectx'
 alias kn='kubens'
 
+# Terraform
+alias tfa='terraform apply'
+alias tfd='terraform destroy'
+alias tfp='terraform plan'
+
 # other
 alias man='man-colorized'
 alias xopen='xdg-open'
-alias gitg='nohup gitg > /dev/null 2>&1 &'
 alias dc='docker-compose'
+alias copy-tab='echo "\\t" | xclip'
